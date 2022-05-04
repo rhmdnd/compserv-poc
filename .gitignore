@@ -1,2 +1,4 @@
 .vagrant
 compserv-poc
+openapi.yaml
+!api/openapi.yaml
