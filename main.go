@@ -14,7 +14,7 @@ import (
 	"log"
 	"net/http"
 
-	compserv "github.com/GIT_USER_ID/GIT_REPO_ID/compserv"
+	compserv "github.com/rhmdnd/compserv-poc/compserv"
 )
 
 func main() {
