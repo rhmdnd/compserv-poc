@@ -20,3 +20,41 @@ $ terraform apply
 
 The database password is kept in AWS Secret Manager and you must log into to
 fetch it.
+
+# OpenAPI Generator
+
+This approach uses [OpenAPI Generator](https://openapi-generator.tech/) to
+generate a server implementation using the
+[go-server](https://openapi-generator.tech/docs/generators/go-server/)
+generator.
+
+## Prerequisites
+
+The scripts to generate the server implementation use the OpenAPI generator
+CLI, which is a jar file. The Vagrantfile in this repository creates a VirtuaBox
+instance for the dependencies. The generated code is synced to the host using a
+sync folder, using the `virtualbox` sync type in Vagrant. The scripts in
+`tools/` expect you have
+[VirtualBox](https://www.vagrantup.com/docs/providers/virtualbox) and
+[Vagrant](https://www.vagrantup.com/docs/installation) installed.
+
+## Usage
+
+Start the VM:
+
+```console
+$ vagrant up; vagrant ssh
+```
+
+Update the package index and install necessary packages:
+
+```console
+$ bash /vagrant/tools/install.sh
+```
+
+Generate the code:
+
+```console
+$ bash /vagrant/tools/generate.sh
+```
+>>>>>>> 2230bf0 (Add instructions and tools for generating go server stubs)
