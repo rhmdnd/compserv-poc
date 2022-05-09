@@ -17,7 +17,7 @@ while getopts "g:i:h" opt; do
         g )
             GENERATOR="$OPTARG"
             ;;
-        g )
+        i )
             SPECIFICATION="$OPTARG"
             ;;
         h )
