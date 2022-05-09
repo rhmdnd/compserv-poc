@@ -31,6 +31,11 @@ while getopts "g:i:h" opt; do
             ;;
     esac
 done
+
+# This will need a better home eventually. For now, I'll just use my ID so we
+# don't end up with `GIT_USER_ID` and `GIT_REPO_ID` in the generated code.
+USER_ID=rhmdnd
+REPO_ID=compserv-poc
 OUTPUT_DIR=/vagrant/
 GENERATOR_NAME=${GENERATOR:-go-server}
 GENERATOR_PATH=$HOME/openapi-generator-cli-6.0.0-beta.jar
@@ -51,6 +56,8 @@ fi
 java -jar $GENERATOR_PATH generate \
   -g $GENERATOR_NAME \
   -i $INPUT \
+  --git-user-id $USER_ID \
+  --git-repo-id $REPO_ID \
   --package-name compserv \
   $CODE_PATH_PROPERTY \
   --output $OUTPUT_DIR
