@@ -16,24 +16,32 @@ generate a server implementation using the
 [go-gin-server](https://openapi-generator.tech/docs/generators/go-gin-server)
 generator.
 
-Run the `generate.sh` script to generate the OSCAL API in a container, writing
-the generated files to a volume shared with the host:
+## Prerequisites
+
+The scripts to generate the server implementation use the OpenAPI generator
+CLI, which is a jar file. The Vagrantfile in this repository creates a VirtuaBox
+instance for the dependencies. The generated code is synced to the host using a
+sync folder, using the `virtualbox` sync type in Vagrant. The scripts in
+`tools/` expect you have
+[VirtualBox](https://www.vagrantup.com/docs/providers/virtualbox) and
+[Vagrant](https://www.vagrantup.com/docs/installation) installed.
+
+## Usage
+
+Start the VM:
 
 ```console
-$ ./generate.sh
+$ vagrant up; vagrant ssh
 ```
 
-Because of the difference between users, you'll need to `chown` the generated
-files after the script completes:
+Update the package index and install necessary packages:
 
 ```console
-$ chown -R $USER:$USER .
+$ bash /vagrant/tools/install.sh
 ```
 
-The `generate.sh` script accepts a file path to an OpenAPI specification, but
-by default it will use the [proof-of-concept specification
-upstream](https://raw.githubusercontent.com/EasyDynamics/oscal-rest/develop/openapi.yaml).
+Generate the code:
 
-Issues:
-
-- The golang version in the generated `Dockerfile` is hardcoded to 1.10
+```console
+$ bash /vagrant/tools/generate.sh -g go-gin-server
+```

@@ -84137,7 +84137,6 @@ components:
           type: string
       type: object
     Party_External_Identifier:
-      additionalProperties: false
       description: An identifier for a person or organization using a designated scheme.
         e.g. an Open Researcher and Contributor ID (ORCID)
       example:
@@ -84157,7 +84156,6 @@ components:
       title: Party External Identifier
       type: object
     Constraint_Test:
-      additionalProperties: false
       description: A test expression which is expected to be evaluated by a tool.
       example:
         expression: expression
@@ -84177,7 +84175,6 @@ components:
       title: Constraint Test
       type: object
     Citation:
-      additionalProperties: false
       description: A citation consisting of end note text and optional structured
         bibliographic data.
       example:
@@ -84224,7 +84221,6 @@ components:
       title: Citation
       type: object
     Resource_link:
-      additionalProperties: false
       description: A pointer to an external resource with an optional hash for verification
         and change detection.
       example:
@@ -84257,7 +84253,6 @@ components:
       title: Resource link
       type: object
     Base64:
-      additionalProperties: false
       description: The Base64 alphabet in RFC 2045 - aligned with XSD.
       example:
         filename: filename
@@ -84284,7 +84279,6 @@ components:
       title: Base64
       type: object
     Resource:
-      additionalProperties: false
       description: A resource associated with content in the containing document.
         A resource may be directly included in the document base64 encoded or may
         point to one or more equivalent internet resources.
@@ -84400,7 +84394,6 @@ components:
       title: Resource
       type: object
     Match_Controls_by_Pattern:
-      additionalProperties: false
       description: Select controls by (regular expression) match on ID
       example:
         pattern: pattern
@@ -84414,7 +84407,6 @@ components:
       title: Match Controls by Pattern
       type: object
     Parameter_Setting:
-      additionalProperties: false
       description: "A parameter setting, to be propagated to points of insertion"
       example:
         depends-on: depends-on
@@ -84541,7 +84533,6 @@ components:
       title: Parameter Setting
       type: object
     Citation_1:
-      additionalProperties: false
       description: A citation consisting of end note text and optional structured
         bibliographic data.
       example:
@@ -84588,7 +84579,6 @@ components:
       title: Citation
       type: object
     Resource_1:
-      additionalProperties: false
       description: A resource associated with content in the containing document.
         A resource may be directly included in the document base64 encoded or may
         point to one or more equivalent internet resources.
@@ -84704,7 +84694,6 @@ components:
       title: Resource
       type: object
     Citation_2:
-      additionalProperties: false
       description: A citation consisting of end note text and optional structured
         bibliographic data.
       example:
@@ -84751,7 +84740,6 @@ components:
       title: Citation
       type: object
     Resource_2:
-      additionalProperties: false
       description: A resource associated with content in the containing document.
         A resource may be directly included in the document base64 encoded or may
         point to one or more equivalent internet resources.
@@ -84867,7 +84855,6 @@ components:
       title: Resource
       type: object
     Information_Type_Categorization:
-      additionalProperties: false
       description: "A set of information type identifiers qualified by the given identification\
         \ system used, such as NIST SP 800-60."
       example:
@@ -84895,7 +84882,6 @@ components:
       title: Information Type Categorization
       type: object
     Confidentiality_Impact_Level:
-      additionalProperties: false
       description: The expected level of impact resulting from the unauthorized disclosure
         of the described information.
       example:
@@ -84957,7 +84943,6 @@ components:
       title: Confidentiality Impact Level
       type: object
     Integrity_Impact_Level:
-      additionalProperties: false
       description: The expected level of impact resulting from the unauthorized modification
         of the described information.
       example:
@@ -85019,7 +85004,6 @@ components:
       title: Integrity Impact Level
       type: object
     Availability_Impact_Level:
-      additionalProperties: false
       description: The expected level of impact resulting from the disruption of access
         to or use of the described information or the information system.
       example:
@@ -85081,7 +85065,6 @@ components:
       title: Availability Impact Level
       type: object
     Information_Type:
-      additionalProperties: false
       description: "Contains details about one information type that is stored, processed,\
         \ or transmitted by the system, such as privacy information, and those defined\
         \ in NIST SP 800-60."
@@ -85245,7 +85228,6 @@ components:
       title: Information Type
       type: object
     Leveraged_Authorization:
-      additionalProperties: false
       description: A description of another authorized system from which this system
         inherits capabilities that satisfy security requirements. Another term for
         this concept is a common control provider.
@@ -85323,7 +85305,6 @@ components:
       title: Leveraged Authorization
       type: object
     Status:
-      additionalProperties: false
       description: Describes the operational status of the system component.
       example:
         state: under-development
@@ -85353,7 +85334,6 @@ components:
       title: Status
       type: object
     Implemented_Component:
-      additionalProperties: false
       description: The set of components that are implemented in a given system inventory
         item.
       example:
@@ -85467,7 +85447,6 @@ components:
       title: Implemented Component
       type: object
     Provided_Control_Implementation:
-      additionalProperties: false
       description: Describes a capability which may be inherited by a leveraging system.
       example:
         responsible-roles:
@@ -85589,7 +85568,6 @@ components:
       title: Provided Control Implementation
       type: object
     Control_Implementation_Responsibility:
-      additionalProperties: false
       description: Describes a control implementation responsibility imposed on a
         leveraging system.
       example:
@@ -85718,7 +85696,6 @@ components:
       title: Control Implementation Responsibility
       type: object
     Export:
-      additionalProperties: false
       description: "Identifies content intended for external consumption, such as\
         \ with leveraged organizations."
       example:
@@ -86104,7 +86081,6 @@ components:
       title: Export
       type: object
     Inherited_Control_Implementation:
-      additionalProperties: false
       description: Describes a control implementation inherited by a leveraging system.
       example:
         responsible-roles:
@@ -86227,7 +86203,6 @@ components:
       title: Inherited Control Implementation
       type: object
     Satisfied_Control_Implementation_Responsibility:
-      additionalProperties: false
       description: Describes how this system satisfies a responsibility imposed by
         a leveraged system.
       example:
@@ -86356,7 +86331,6 @@ components:
       title: Satisfied Control Implementation Responsibility
       type: object
     Citation_3:
-      additionalProperties: false
       description: A citation consisting of end note text and optional structured
         bibliographic data.
       example:
@@ -86403,7 +86377,6 @@ components:
       title: Citation
       type: object
     Resource_3:
-      additionalProperties: false
       description: A resource associated with content in the containing document.
         A resource may be directly included in the document base64 encoded or may
         point to one or more equivalent internet resources.
