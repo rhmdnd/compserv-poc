@@ -13,7 +13,7 @@ Each approach will be isolated to a branch.
 
 You can deploy the infrastructure using `terraform`.
 
-``console
+```console
 $ cd terraform/
 $ terraform apply
 ```
