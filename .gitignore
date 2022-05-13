@@ -5,3 +5,6 @@ compserv-poc
 terraform/.terraform*
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
+
+# Ignore anything in config/ except the sample
+config/*.yaml
