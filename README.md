@@ -57,4 +57,3 @@ Generate the code:
 ```console
 $ bash /vagrant/tools/generate.sh
 ```
->>>>>>> 2230bf0 (Add instructions and tools for generating go server stubs)
