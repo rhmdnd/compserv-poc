@@ -84,7 +84,15 @@ resource "aws_route_table" "main" {
 resource "aws_route_table_association" "main" {
   subnet_id      = aws_subnet.primary.id
   route_table_id = aws_route_table.main.id
-  depends_on = [aws_route_table.main]
+  depends_on     = [aws_route_table.main]
+}
+
+# Make sure we use the route table associated with the gateway. Otherwise there
+# is a chance the VPC will use the route table from the secondary subnet,
+# leaving the RDS instance unreachable.
+resource "aws_main_route_table_association" "main" {
+  vpc_id         = aws_vpc.main.id
+  route_table_id = aws_route_table.main.id
 }
 
 # Generate a random password and store it in AWS Secret Manager. The user must
@@ -104,12 +112,12 @@ resource "random_uuid" "secret_uuid" {
 }
 
 resource "aws_secretsmanager_secret" "database_secret" {
-  name = "postgres-secret-${random_uuid.secret_uuid.result}"
+  name        = "postgres-secret-${random_uuid.secret_uuid.result}"
   description = "Postgres database secret"
 }
 
 resource "aws_secretsmanager_secret_version" "database_secret" {
-  secret_id = aws_secretsmanager_secret.database_secret.id
+  secret_id     = aws_secretsmanager_secret.database_secret.id
   secret_string = random_password.password.result
 }
 
