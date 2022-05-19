@@ -4,6 +4,7 @@ import (
 	"encoding/base64"
 	"fmt"
 	"log"
+	"net"
 	"os"
 
 	"github.com/aws/aws-sdk-go/aws"
@@ -11,8 +12,12 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/secretsmanager"
 	"github.com/spf13/viper"
+	"google.golang.org/grpc"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+
+	"github.com/rhmdnd/compserv-poc/compserv"
+	pb "github.com/rhmdnd/compserv-poc/compserv"
 )
 
 func main() {
@@ -27,6 +32,16 @@ func main() {
 	}
 	log.Printf("Established database connection. %v", db)
 
+	lis, err := net.Listen("tcp", "localhost:50051")
+	if err != nil {
+		log.Printf("Failed to listen: %v", err)
+	}
+
+	var opts []grpc.ServerOption
+	grpcServer := grpc.NewServer(opts...)
+	pb.RegisterAssessmentResultServer(grpcServer, compserv.NewServer(db))
+	log.Printf("gRPC server listening on %s", lis.Addr())
+	grpcServer.Serve(lis)
 }
 
 func parseConfig() map[string]string {

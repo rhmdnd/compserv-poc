@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+option go_package = "github.com/rhmdnd/compserv";
+
+service AssessmentResult {
+  rpc AddAssessmentResult(Result) returns (Result) {}
+}
+
+message Result {
+  string subject = 1;
+  string control = 2;
+  string rule = 3;
+  string outcome = 4;
+}
