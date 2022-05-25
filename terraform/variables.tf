@@ -5,8 +5,8 @@ variable "username" {
   sensitive   = true
 }
 
-variable "table_name" {
-  description = "The name of the database table for compliance data"
+variable "database_name" {
+  description = "The name of the database for compliance data"
   type        = string
   default     = "compliance"
 }

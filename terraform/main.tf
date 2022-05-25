@@ -131,4 +131,5 @@ resource "aws_db_instance" "postgres_database" {
   db_subnet_group_name   = aws_db_subnet_group.postgres.name
   publicly_accessible    = true
   skip_final_snapshot    = true
+  db_name                = var.database_name
 }
